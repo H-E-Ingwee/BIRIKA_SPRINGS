@@ -4,7 +4,7 @@
 .hero-section {
     position: relative;
     height: 85vh; /* Slightly taller hero section */
-    background: linear-gradient(rgba(0, 123, 255, 0.88), rgba(74, 144, 226, 0.88)), url('https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=cover') no-repeat center center;
+    background: linear-gradient(rgba(0, 123, 255, 0.88), rgba(74, 144, 226, 0.88)), url('../BITL.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed; /* Parallax-like effect */
     display: flex;
