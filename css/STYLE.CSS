@@ -1,0 +1,229 @@
+/* css/style.css */
+
+/* Global Body & Typography */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter font as per branding */
+    background-color: #f8f9fa; /* Light grey background */
+    color: #333; /* Dark grey for primary text */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding-top: 76px; /* Adjust for fixed navbar height (approx 76px for Bootstrap 5 default) */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif; /* Consistent heading font */
+    font-weight: 700; /* Bold headings */
+    color: #007bff; /* Primary blue for headings */
+}
+
+p {
+    line-height: 1.7; /* Improved readability for paragraphs */
+    color: #555; /* Slightly softer text color */
+}
+
+a {
+    color: #007bff; /* Primary blue for links */
+    text-decoration: none; /* No underline by default */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #ffffff !important; /* White background as per your HTML */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* More prominent shadow for white navbar */
+    padding: 10px 0;
+}
+
+.navbar-brand img {
+    height: 50px; /* Logo height */
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: #333 !important; /* Dark text for nav links */
+    font-weight: 600; /* Semi-bold */
+    margin-left: 25px; /* Spacing between links */
+    position: relative; /* For active indicator */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff !important; /* Primary blue on hover */
+}
+
+.nav-link.active {
+    color: #007bff !important; /* Primary blue for active link */
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Position below text */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; /* Starts at 0 width */
+    height: 3px;
+    background-color: #007bff;
+    border-radius: 2px;
+    transition: width 0.3s ease; /* Animation for width */
+}
+
+.nav-link.active:hover::after,
+.nav-link.active::after {
+    width: 70%; /* Full width for active/hover */
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #343a40 !important; /* Dark background as per your HTML */
+    color: #ffffff;
+    padding: 60px 0 30px 0; /* More padding */
+}
+
+.footer img {
+    height: 60px; /* Larger logo in footer */
+    margin-bottom: 20px;
+}
+
+.footer h5 {
+    color: #ffffff; /* White headings in footer */
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.footer p {
+    color: #ccc; /* Lighter text for paragraphs */
+    line-height: 1.8;
+}
+
+/* Specific fix for footer list items to ensure white color */
+.footer .list-unstyled li,
+.footer .list-unstyled li a,
+.footer .list-unstyled li i {
+    color: #ffffff !important; /* Force white color for text and icons */
+}
+
+.footer .list-unstyled a:hover {
+    color: #add8e6 !important; /* Lighter blue on hover */
+}
+
+.footer .social-icons a {
+    color: #ffffff;
+    font-size: 1.6rem; /* Slightly larger social icons */
+    margin-right: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #007bff;
+    transform: translateY(-3px);
+}
+
+.footer hr {
+    border-color: rgba(255, 255, 255, 0.1); /* Lighter hr color */
+}
+
+.footer .text-primary { /* For check icons in services */
+    color: #007bff !important;
+}
+
+/* Responsive Adjustments for Global Styles */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: #ffffff;
+        border-top: 1px solid #eee;
+        padding: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .nav-link.active::after {
+        width: 30px; /* Smaller underline for mobile */
+    }
+    body {
+        padding-top: 0; /* Remove top padding when navbar is not fixed-top on collapse */
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    .nav-link {
+        margin-left: 0;
+        text-align: center;
+    }
+    .footer {
+        text-align: center;
+    }
+    .footer .col-lg-4, .footer .col-lg-2, .footer .col-lg-3 {
+        margin-bottom: 30px;
+    }
+    .footer .social-icons {
+        text-align: center;
+    }
+    .footer .list-unstyled {
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,690 @@
+/* css/products.css */
+
+/* Page Header/Hero for Products */
+.products-header {
+    background: linear-gradient(rgba(0, 123, 255, 0.88), rgba(74, 144, 226, 0.88)), url('https://images.unsplash.com/photo-1544465522-f3f2628468b3?auto=format&fit=cover') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax-like effect */
+    padding: 140px 0;
+    color: #ffffff;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    margin-bottom: 80px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.products-header h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ffffff;
+    /* Removed opacity: 0 and transform here */
+    animation: fadeInDown 1s ease-out forwards;
+    animation-fill-mode: backwards; /* Ensures element starts from 'from' state */
+}
+
+.products-header p {
+    font-size: 2.2rem;
+    color: #f0f8ff;
+    /* Removed opacity: 0 and transform here */
+    animation: fadeInUp 1s ease-out 0.4s forwards; /* Apply animation with delay */
+    animation-fill-mode: backwards; /* Ensures element starts from 'from' state */
+}
+
+/* Section Styling (Bottled Water, Customized Bottling, Delivery Services, Bulk Orders) */
+#bottled-water, #delivery-services {
+    padding: 100px 0;
+    background-color: #f8f9fa; /* Light background for alternating sections */
+    position: relative;
+    /* Subtle background pattern, similar to About page company overview */
+    background-image: linear-gradient(45deg, rgba(0, 123, 255, 0.03) 25%, transparent 25%, transparent 75%, rgba(0, 123, 255, 0.03) 75%, rgba(0, 123, 255, 0.03)), linear-gradient(45deg, rgba(0, 123, 255, 0.03) 25%, transparent 25%, transparent 75%, rgba(0, 123, 255, 0.03) 75%, rgba(0, 123, 255, 0.03));
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+#customized-bottling, #bulk-orders, #product-info-faq { /* Added product-info-faq */
+    padding: 100px 0;
+    background-color: #ffffff; /* White background for alternating sections */
+}
+
+/* Product Item Card (for Bottled Water section) */
+.product-item {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.5s ease; /* Added opacity for filtering */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.product-item:hover {
+    transform: translateY(-15px) scale(1.01);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.product-image {
+    position: relative;
+    height: 220px; /* Consistent height for product images */
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-item:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #28a745; /* Green for "Bestseller" */
+    color: #ffffff;
+    padding: 8px 15px; /* Larger padding */
+    border-radius: 25px; /* More rounded */
+    font-size: 0.9rem; /* Slightly larger font */
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0.5px;
+}
+
+.product-badge.new {
+    background-color: #ffc107; /* Yellow for "New" */
+    color: #333;
+}
+
+.product-details {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-details h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.product-details p.text-muted {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.product-features p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.product-features i {
+    font-size: 1.1rem;
+    margin-right: 8px;
+}
+
+/* Quantity Control */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 120px; /* Fixed width for control */
+    margin: 0 auto; /* Center the control */
+}
+
+.quantity-control .btn-sm {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+    border-radius: 50%; /* Circular buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-control .quantity-input {
+    width: 50px; /* Fixed width for input */
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0.25rem; /* Small rounded corners for input */
+    padding: 0.375rem 0.25rem; /* Adjust padding */
+}
+
+/* Section Title with Icon */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.section-title i {
+    font-size: 2.8rem;
+    color: #007bff;
+}
+
+/* Lead paragraph styling */
+.lead {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* List styling */
+ul.list-unstyled li {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+ul.list-unstyled li i {
+    color: #007bff;
+    font-size: 1.4rem;
+}
+
+/* Customized Bottling Specific Styles */
+#customized-bottling .custom-features {
+    margin-top: 30px;
+}
+
+#customized-bottling .feature-item .feature-icon i {
+    font-size: 2.5rem; /* Smaller icons for these features */
+    color: #007bff;
+}
+
+#customized-bottling .feature-item h5 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+#customized-bottling .feature-item p {
+    font-size: 0.95rem;
+    color: #777;
+}
+
+.pricing-card {
+    background-color: #f0f8ff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-card h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+/* Delivery Services Specific Styles */
+#delivery-services .delivery-details h5,
+#delivery-services .delivery-pricing h5 {
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#delivery-services .table {
+    border-color: #dee2e6;
+}
+
+#delivery-services .table th,
+#delivery-services .table td {
+    vertical-align: middle;
+    padding: 12px;
+}
+
+#delivery-services .table thead th {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+}
+
+#delivery-services .table tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Bulk Orders Section */
+.bulk-orders-section .benefit-card {
+    background-color: #f0f8ff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.bulk-orders-section .benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bulk-orders-section .benefit-icon i {
+    font-size: 3.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.bulk-orders-section .benefit-card h6 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.bulk-orders-section .benefit-card p {
+    font-size: 0.95rem;
+    color: #777;
+}
+
+/* Modal Styling (already defined in previous step, ensuring it's here for completeness) */
+.modal-content {
+    border-radius: 1rem !important; /* Larger border-radius for modals */
+    overflow: hidden; /* Ensure rounded corners clip content */
+    border: none; /* Remove default modal border */
+}
+
+.modal-header.bg-primary {
+    background-color: #007bff !important;
+    border-bottom: none; /* Remove default border */
+    padding: 1.5rem; /* More padding */
+}
+
+.modal-header .modal-title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.75rem;
+}
+
+.modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%); /* Make close button white */
+}
+
+.modal-body p strong {
+    color: #007bff; /* Highlight inquiry type in modal body */
+}
+
+.modal-body .form-control {
+    border-radius: 0.5rem; /* Rounded corners for form inputs */
+    padding: 0.75rem 1rem;
+}
+
+.modal-body .btn-primary,
+.modal-body .btn-outline-secondary {
+    border-radius: 50px; /* Rounded buttons in modal */
+    font-weight: 600;
+}
+
+.modal-body .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #ffffff;
+}
+
+.modal-body .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.modal-body .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.modal-body .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #ffffff;
+}
+
+/* Product Filter Dropdown */
+#productFilter {
+    border-radius: 50px; /* Rounded filter dropdown */
+    padding: 0.75rem 1.25rem;
+    font-size: 1.1rem;
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+#productFilter:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Add to Cart Message */
+#cartMessage {
+    min-height: 30px; /* Reserve space for message */
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.cart-success {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb;
+    opacity: 1;
+}
+
+/* Shopping Cart Navbar Icon */
+.cart-icon-link {
+    position: relative;
+    padding-right: 25px !important; /* Make space for badge */
+}
+
+.cart-icon-link .cart-count {
+    position: absolute;
+    top: 5px; /* Adjust vertical position */
+    right: 5px; /* Adjust horizontal position */
+    font-size: 0.75rem; /* Smaller font size for badge */
+    padding: 0.35em 0.6em; /* Adjust padding */
+    line-height: 1; /* Ensure badge is compact */
+    border-radius: 50%; /* Make it perfectly round */
+}
+
+/* Shopping Cart Modal */
+#shoppingCartModal .modal-body .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+#shoppingCartModal .modal-body .cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#shoppingCartModal .modal-body .cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+}
+
+#shoppingCartModal .modal-body .cart-item-details {
+    flex-grow: 1;
+}
+
+#shoppingCartModal .modal-body .cart-item-details h6 {
+    font-size: 1.1rem;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+#shoppingCartModal .modal-body .cart-item-details p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0;
+}
+
+#shoppingCartModal .modal-body .cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#shoppingCartModal .modal-body .cart-item-quantity .btn-sm {
+    padding: 0.1rem 0.4rem; /* Smaller buttons */
+    font-size: 0.8rem;
+}
+
+#shoppingCartModal .modal-body .cart-item-quantity span {
+    font-weight: bold;
+    font-size: 1rem;
+    min-width: 20px;
+    text-align: center;
+}
+
+#shoppingCartModal .modal-body .cart-item-price {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+#shoppingCartModal .modal-body #emptyCartMessage {
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Product Info FAQ Section */
+#product-info-faq .accordion-item {
+    border: 1px solid rgba(0, 123, 255, 0.1);
+    border-radius: 15px !important; /* Override default Bootstrap radius */
+    overflow: hidden;
+}
+
+#product-info-faq .accordion-button {
+    background-color: #f0f8ff; /* Light blue background for accordion header */
+    color: #007bff;
+    font-size: 1.2rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: 15px !important; /* Match item radius */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#product-info-faq .accordion-button:not(.collapsed) {
+    background-color: #007bff; /* Darker blue when expanded */
+    color: #ffffff;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#product-info-faq .accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1); /* White arrow when expanded */
+}
+
+#product-info-faq .accordion-body {
+    padding: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    background-color: #ffffff;
+}
+
+
+/* Responsive Adjustments for Products Page */
+@media (max-width: 991.98px) {
+    .products-header h1 {
+        font-size: 3.5rem;
+    }
+    .products-header p {
+        font-size: 1.4rem;
+    }
+    #bottled-water, #customized-bottling, #delivery-services, #bulk-orders, #product-info-faq { /* Added product-info-faq */
+        padding: 80px 0;
+    }
+    #bottled-water img, #customized-bottling img, #delivery-services img {
+        margin-bottom: 30px; /* Add margin for mobile */
+    }
+    .section-title i {
+        font-size: 2.2rem;
+    }
+    .lead {
+        font-size: 1.2rem;
+    }
+    ul.list-unstyled li {
+        font-size: 1.05rem;
+    }
+    /* Reverse column order for mobile for better flow in alternating sections */
+    #customized-bottling .row, #delivery-services .row {
+        flex-direction: column;
+    }
+    #customized-bottling .col-lg-6:first-child, /* Image column in customized */
+    #delivery-services .col-lg-6:first-child { /* Image column in delivery */
+        order: 1; /* Move image below text */
+    }
+    #customized-bottling .col-lg-6:last-child, /* Text column in customized */
+    #delivery-services .col-lg-6:last-child { /* Text column in delivery */
+        order: 2; /* Move text above image */
+    }
+    /* Ensure text is centered on mobile for alternating sections if desired */
+    #customized-bottling .col-lg-6:last-child,
+    #delivery-services .col-lg-6:last-child {
+        text-align: center;
+    }
+    #customized-bottling .feature-item,
+    #delivery-services .delivery-details ul li {
+        justify-content: center; /* Center content in feature/list items */
+    }
+    #customized-bottling .feature-item .feature-icon,
+    #delivery-services .delivery-details ul li i {
+        margin-right: 10px; /* Maintain some spacing */
+    }
+    #customized-bottling .pricing-card,
+    .bulk-orders-section .benefit-card {
+        margin-bottom: 20px; /* Add space between cards on mobile */
+    }
+}
+
+@media (max-width: 767.98px) {
+    .products-header {
+        padding: 100px 0;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        margin-bottom: 40px;
+    }
+    .products-header h1 {
+        font-size: 2.8rem;
+    }
+    .products-header p {
+        font-size: 1.2rem;
+    }
+    #bottled-water, #customized-bottling, #delivery-services, #bulk-orders, #product-info-faq { /* Added product-info-faq */
+        padding: 60px 0;
+    }
+    .product-details h3 {
+        font-size: 1.6rem;
+    }
+    .pricing-card .price {
+        font-size: 2rem;
+    }
+    .bulk-orders-section .benefit-icon i {
+        font-size: 3rem;
+    }
+    .bulk-orders-section .benefit-card h6 {
+        font-size: 1.2rem;
+    }
+    /* Modal adjustments for smaller screens */
+    .modal-dialog.modal-lg {
+        max-width: 90%; /* Adjust max-width for larger modal on small screens */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .products-header {
+        padding: 80px 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        margin-bottom: 30px;
+    }
+    .products-header h1 {
+        font-size: 2.2rem;
+    }
+    .products-header p {
+        font-size: 1rem;
+    }
+    #bottled-water, #customized-bottling, #delivery-services, #bulk-orders, #product-info-faq { /* Added product-info-faq */
+        padding: 50px 0;
+    }
+    .product-details h3 {
+        font-size: 1.4rem;
+    }
+    .pricing-card .price {
+        font-size: 1.8rem;
+    }
+    .bulk-orders-section .benefit-icon i {
+        font-size: 2.5rem;
+    }
+    .bulk-orders-section .benefit-card h6 {
+        font-size: 1.1rem;
+    }
+    /* Center text for all sections on very small screens */
+    #customized-bottling .col-lg-6,
+    #delivery-services .col-lg-6 {
+        text-align: center;
+    }
+    #customized-bottling .feature-item,
+    #delivery-services .delivery-details ul li {
+        justify-content: center;
+    }
+    /* Modal adjustments for very small screens */
+    .modal-dialog.modal-lg {
+        max-width: 95%;
+    }
+    .modal-body .row {
+        flex-direction: column; /* Stack image and text vertically in quick view modal */
+    }
+    #productQuickViewModal .modal-body img {
+        width: 100%;
+        height: auto;
+    }
+}
+/* Back to Top Button */
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other content */
+}

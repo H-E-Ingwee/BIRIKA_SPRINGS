@@ -1,0 +1,357 @@
+/* css/process.css */
+
+/* Page Header/Hero for Our Process */
+.process-header {
+    background: linear-gradient(rgba(0, 123, 255, 0.88), rgba(74, 144, 226, 0.88)), url('https://images.unsplash.com/photo-1544465522-f3f2628468b3?auto=format&fit=cover') no-repeat center center;
+    background-size: cover; /* Ensure image covers the area */
+    background-attachment: fixed; /* Parallax-like effect */
+    padding: 140px 0;
+    color: #ffffff;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    margin-bottom: 80px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.process-header h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.process-header p {
+    font-size: 2.2rem;
+    color: #f0f8ff;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+}
+
+/* Process Overview Section */
+#process-overview {
+    padding: 100px 0;
+    background-color: #f8f9fa; /* Light background */
+    position: relative;
+    background-image: linear-gradient(45deg, rgba(0, 123, 255, 0.03) 25%, transparent 25%, transparent 75%, rgba(0, 123, 255, 0.03) 75%, rgba(0, 123, 255, 0.03)), linear-gradient(45deg, rgba(0, 123, 255, 0.03) 25%, transparent 25%, transparent 75%, rgba(0, 123, 255, 0.03) 75%, rgba(0, 123, 255, 0.03));
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+#process-overview img {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 4px solid #007bff;
+}
+
+#process-overview img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+#process-overview .section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#process-overview .section-title i {
+    font-size: 2.8rem;
+    color: #007bff;
+}
+
+#process-overview p.lead {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+#process-overview ul li {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+#process-overview ul li i {
+    color: #007bff;
+    font-size: 1.4rem;
+}
+
+/* Detailed Process Steps Section */
+#detailed-steps {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+#detailed-steps .section-title i {
+    font-size: 2.8rem;
+    color: #007bff;
+}
+
+.process-timeline .process-step-card {
+    background-color: #f0f8ff;
+    border-radius: 20px;
+    padding: 25px; /* Slightly reduced padding for header content */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto; /* Allow height to adjust based on content */
+    display: flex;
+    flex-direction: column; /* Stack header and body */
+    border: 1px solid rgba(0, 123, 255, 0.15);
+}
+
+.process-timeline .process-step-card:hover {
+    transform: translateY(-10px); /* Subtle lift on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.process-step-header {
+    cursor: pointer;
+    padding-bottom: 15px; /* Space below header before collapsed content */
+    border-bottom: 1px solid rgba(0, 123, 255, 0.2); /* Separator line */
+    margin-bottom: 0; /* Remove default margin */
+    transition: border-bottom 0.3s ease;
+}
+
+.process-step-header:hover {
+    border-bottom-color: #007bff;
+}
+
+.process-step-header .process-icon {
+    flex-shrink: 0;
+    margin-right: 25px;
+    background-color: #007bff;
+    color: #ffffff;
+    width: 70px; /* Slightly smaller icon container */
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.process-step-header:hover .process-icon {
+    background-color: #0056b3;
+}
+
+.process-step-header .process-icon i {
+    font-size: 3rem; /* Icon size */
+}
+
+.process-step-header h4 {
+    font-size: 1.6rem; /* Slightly smaller heading for header */
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 0; /* Remove default margin */
+}
+
+.process-step-header .toggle-icon {
+    font-size: 1.5rem;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+.process-step-header[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg); /* Rotate chevron when expanded */
+}
+
+.process-step-body {
+    padding-top: 15px; /* Padding above expanded content */
+}
+
+.process-step-body p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+
+/* Staggered animation for process steps (JS triggers 'is-visible') */
+.process-step-card.stagger-animate {
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly below its final position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+.process-step-card.stagger-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Quality Assurance Highlight Section (Reused from About Us) */
+#quality-highlight {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+#quality-highlight .section-title i {
+    font-size: 2.8rem;
+    color: #007bff;
+}
+
+#quality-highlight ul li {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+#quality-highlight ul li i {
+    color: #007bff;
+    font-size: 1.4rem;
+}
+
+#quality-highlight img {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 4px solid #007bff;
+}
+
+#quality-highlight img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframe Animations (copied from global/home for convenience, ensure consistency) */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments for Process Page */
+@media (max-width: 991.98px) {
+    .process-header h1 {
+        font-size: 3.5rem;
+    }
+    .process-header p {
+        font-size: 1.4rem;
+    }
+    #process-overview, #detailed-steps, #quality-highlight {
+        padding: 80px 0;
+    }
+    #process-overview img, #quality-highlight img {
+        margin-bottom: 30px;
+    }
+    .process-timeline .process-step-card {
+        padding: 20px; /* Adjust padding for smaller screens */
+        margin-bottom: 20px; /* Space between cards */
+    }
+    .process-timeline .process-icon {
+        width: 60px; /* Smaller icon container */
+        height: 60px;
+        margin-right: 15px;
+    }
+    .process-timeline .process-icon i {
+        font-size: 2.5rem;
+    }
+    .process-timeline .process-step-card h4 {
+        font-size: 1.4rem;
+    }
+    .process-step-header .toggle-icon {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .process-header {
+        padding: 100px 0;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        margin-bottom: 40px;
+    }
+    .process-header h1 {
+        font-size: 2.8rem;
+    }
+    .process-header p {
+        font-size: 1.2rem;
+    }
+    #process-overview, #detailed-steps, #quality-highlight {
+        padding: 60px 0;
+    }
+    #process-overview .section-title i,
+    #detailed-steps .section-title i,
+    #quality-highlight .section-title i {
+        font-size: 2.2rem;
+    }
+    .process-timeline .process-step-card {
+        flex-direction: column; /* Stack icon and text vertically */
+        text-align: center;
+        align-items: center;
+    }
+    .process-timeline .process-icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .process-timeline .process-icon i {
+        font-size: 2.8rem;
+    }
+    .process-timeline .process-step-card h4 {
+        font-size: 1.4rem;
+    }
+    #quality-highlight img {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .process-header {
+        padding: 80px 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        margin-bottom: 30px;
+    }
+    .process-header h1 {
+        font-size: 2.2rem;
+    }
+    .process-header p {
+        font-size: 1rem;
+    }
+    #process-overview, #detailed-steps, #quality-highlight {
+        padding: 50px 0;
+    }
+    .process-timeline .process-step-card {
+        padding: 20px;
+    }
+    .process-timeline .process-icon {
+        width: 50px; /* Even smaller icon container */
+        height: 50px;
+    }
+    .process-timeline .process-icon i {
+        font-size: 2rem;
+    }
+    .process-timeline .process-step-card h4 {
+        font-size: 1.2rem;
+    }
+}
+/* Back to Top Button */
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other content */
+}

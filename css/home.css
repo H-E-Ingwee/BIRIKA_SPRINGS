@@ -1,0 +1,761 @@
+/* css/home.css */
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 85vh; /* Slightly taller hero section */
+    background: linear-gradient(rgba(0, 123, 255, 0.88), rgba(74, 144, 226, 0.88)), url('https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=cover') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax-like effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden; /* Hide overflow from animations */
+    border-bottom-left-radius: 80px; /* Re-introducing smooth rounded corners */
+    border-bottom-right-radius: 80px; /* Re-introducing smooth rounded corners */
+    z-index: 1; /* Ensure hero section is above other content */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Stronger shadow for the header */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 123, 255, 0.75), rgba(74, 144, 226, 0.75)); /* Stronger blue gradient overlay */
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2; /* Ensure content is above overlay */
+}
+
+.hero-section h1 {
+    font-size: 4.8rem; /* Even larger heading */
+    font-weight: 900;
+    margin-bottom: 25px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.hero-section p {
+    font-size: 2.2rem; /* Larger paragraph text */
+    font-weight: 400;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+}
+
+#dynamicTagline {
+    display: inline-block; /* Essential for text animation */
+    min-width: 300px; /* Prevent layout shift during text change */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-section .btn-primary {
+    padding: 20px 50px; /* Larger button */
+    font-size: 1.4rem;
+    border-radius: 50px;
+    background-color: #ffffff;
+    color: #007bff;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+    opacity: 0;
+    transform: scale(0.7);
+    animation: zoomIn 1s ease-out 0.8s forwards;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-7px) scale(1.03); /* More pronounced lift and enlarge */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Animated Water Bubbles/Elements for Hero Section */
+.hero-section .water-element {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    animation: floatBubble 15s infinite ease-in-out;
+    z-index: 0;
+}
+
+.hero-section .water-element:nth-child(1) {
+    width: 80px; height: 80px; top: 10%; left: 5%; animation-duration: 10s;
+}
+.hero-section .water-element:nth-child(2) {
+    width: 120px; height: 120px; bottom: 15%; right: 10%; animation-duration: 12s; animation-delay: 1s;
+}
+.hero-section .water-element:nth-child(3) {
+    width: 60px; height: 60px; top: 30%; right: 20%; animation-duration: 8s; animation-delay: 2s;
+}
+.hero-section .water-element:nth-child(4) {
+    width: 100px; height: 100px; bottom: 5%; left: 25%; animation-duration: 14s; animation-delay: 0.5s;
+}
+.hero-section .water-element:nth-child(5) {
+    width: 70px; height: 70px; top: 50%; left: 40%; animation-duration: 11s; animation-delay: 1.5s;
+}
+
+/* Scroll Down Indicator */
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: #ffffff;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-15px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-7px) translateX(-50%);
+    }
+}
+
+/* Features Section */
+.features-section {
+    padding: 100px 0; /* More padding */
+    background-color: #f0f8ff; /* Light blue background */
+}
+
+.feature-card {
+    background: linear-gradient(to bottom right, #ffffff, #f0f8ff); /* Subtle gradient background */
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 100%; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 45px; /* More padding */
+    border: 1px solid rgba(0, 123, 255, 0.1); /* Subtle border */
+}
+
+.feature-card:hover {
+    transform: translateY(-20px) scale(1.03); /* More pronounced lift and enlarge */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 4.5rem; /* Even larger icons */
+    color: #007bff;
+    margin-bottom: 30px;
+    transition: color 0.3s ease, transform 0.4s ease; /* Add transform for icon animation */
+}
+
+.feature-card:hover .feature-icon {
+    color: #0056b3;
+    transform: rotateY(360deg); /* Spin effect on hover */
+}
+
+.feature-card h3 {
+    font-size: 2rem; /* Larger heading */
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.feature-card p {
+    font-size: 1.15rem; /* Slightly larger text */
+    color: #555;
+}
+
+/* Quick Facts Section */
+.quick-facts-section {
+    padding: 100px 0;
+    background: linear-gradient(to right, #007bff, #4a90e2); /* Strong blue gradient background */
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    z-index: 0; /* Place behind features section for visual layering */
+}
+
+.quick-facts-section .section-title,
+.quick-facts-section .section-subtitle {
+    color: #ffffff; /* White text for titles in this section */
+}
+
+.quick-facts-section .fact-item {
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.quick-facts-section .fact-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.quick-facts-section .fact-item i {
+    color: #007bff; /* Primary blue icon */
+    margin-bottom: 20px;
+}
+
+.quick-facts-section .fact-item h3 {
+    font-size: 3.5rem; /* Large numbers */
+    font-weight: 900;
+    color: #007bff; /* Primary blue number */
+    margin-bottom: 10px;
+}
+
+.quick-facts-section .fact-item p {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+}
+
+
+/* About Preview Section */
+.about-preview-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+    position: relative; /* Needed for z-index */
+    z-index: 1; /* Ensure it's above quick-facts section */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for section separation */
+}
+
+.about-preview-section img {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 4px solid #007bff;
+}
+
+.about-preview-section img:hover {
+    transform: scale(1.01); /* Subtle zoom */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.about-preview-section .section-title {
+    color: #007bff;
+}
+
+/* Products Preview Section */
+.products-preview-section {
+    padding: 100px 0;
+    background-color: #f0f8ff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for section separation */
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-20px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.product-image {
+    position: relative;
+    height: 250px; /* Taller image area */
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease; /* Slower zoom effect */
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.15); /* More zoom effect on hover */
+}
+
+.product-info {
+    padding: 30px; /* More padding */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.product-info p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for section separation */
+}
+
+.testimonial-item {
+    background-color: #f8f9fa; /* Light background for testimonial cards */
+    border-radius: 20px;
+    padding: 50px; /* More padding */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin: 0 auto; /* Center items in carousel */
+    max-width: 800px; /* Control width of testimonial content */
+    min-height: 300px; /* Taller for content and avatar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 123, 255, 0.05);
+}
+
+.testimonial-item img.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #007bff; /* Blue border around avatar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+    font-size: 1.25rem; /* Larger quote text */
+    font-style: italic;
+    color: #444;
+    margin-bottom: 25px;
+    position: relative;
+    max-width: 700px; /* Max width for quotes */
+}
+
+.testimonial-content .fa-quote-left,
+.testimonial-content .fa-quote-right {
+    font-size: 2.2rem; /* Larger quote icons */
+    color: #007bff;
+    opacity: 0.7;
+}
+
+.testimonial-content .fa-quote-left {
+    top: -15px;
+    left: -15px;
+}
+
+.testimonial-content .fa-quote-right {
+    bottom: -15px;
+    right: -15px;
+}
+
+.testimonial-author h5 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 8px;
+}
+
+.testimonial-author p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Bootstrap Carousel Customizations for Testimonials */
+#testimonialCarousel .carousel-indicators [data-bs-target] {
+    background-color: #007bff;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#testimonialCarousel .carousel-indicators .active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon {
+    background-image: none; /* Remove default Bootstrap icons */
+    width: 30px;
+    height: 30px;
+    font-size: 2rem; /* Use Font Awesome for controls */
+    color: #007bff;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#testimonialCarousel .carousel-control-prev-icon::before {
+    content: "\f104"; /* Font Awesome left arrow */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+#testimonialCarousel .carousel-control-next-icon::before {
+    content: "\f105"; /* Font Awesome right arrow */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+#testimonialCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next:hover .carousel-control-next-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+/* Call to Action Section */
+.cta-section {
+    position: relative;
+    padding: 120px 0; /* More padding */
+    background: linear-gradient(rgba(0, 123, 255, 0.88), rgba(74, 144, 226, 0.88)), url('https://images.unsplash.com/photo-1549497520-a61678225e52?auto=format&fit=cover') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.3); /* Shadow above the section */
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.85); /* Even stronger blue overlay */
+    z-index: 1;
+}
+
+.cta-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-section h2 {
+    font-size: 3.8rem; /* Larger heading */
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.4);
+}
+
+.cta-section p {
+    font-size: 1.5rem;
+    margin-bottom: 60px;
+    color: #f0f8ff;
+}
+
+.cta-section .btn-light {
+    background-color: #ffffff;
+    color: #007bff;
+    border-radius: 50px;
+    padding: 18px 45px; /* Larger buttons */
+    font-size: 1.3rem;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite ease-in-out; /* Pulse animation */
+}
+
+.cta-section .btn-light:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.cta-section .btn-outline-light {
+    color: #ffffff;
+    border-color: #ffffff;
+    border-radius: 50px;
+    padding: 18px 45px; /* Larger buttons */
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-section .btn-outline-light:hover {
+    background-color: #ffffff;
+    color: #007bff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #007bff;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.6); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatBubble {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
+    25% { transform: translateY(-20px) translateX(15px) scale(1.08); opacity: 0.2; }
+    50% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
+    75% { transform: translateY(20px) translateX(-15px) scale(0.92); opacity: 0.1; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); }
+    50% { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); }
+    100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); }
+}
+
+/* Responsive Adjustments for Home Page */
+@media (max-width: 991.98px) {
+    .hero-section {
+        height: 75vh;
+    }
+    .hero-section h1 {
+        font-size: 3.8rem;
+    }
+    .hero-section p {
+        font-size: 1.6rem;
+    }
+    .hero-section .btn-primary {
+        padding: 15px 40px;
+        font-size: 1.2rem;
+    }
+    .feature-card, .product-card, .testimonial-item, .fact-item { /* Added fact-item */
+        padding: 35px;
+    }
+    .feature-icon {
+        font-size: 4rem;
+    }
+    .feature-card h3 {
+        font-size: 1.8rem;
+    }
+    .product-info h3 {
+        font-size: 1.6rem;
+    }
+    .testimonial-item {
+        min-height: 280px;
+    }
+    .testimonial-content {
+        font-size: 1.1rem;
+    }
+    .cta-section h2 {
+        font-size: 3rem;
+    }
+    .cta-section p {
+        font-size: 1.3rem;
+    }
+    .cta-section .btn {
+        padding: 15px 35px;
+        font-size: 1.2rem;
+    }
+    .quick-facts-section .fact-item h3 {
+        font-size: 3rem;
+    }
+    .quick-facts-section .fact-item i {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        height: 65vh;
+    }
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    .hero-section p {
+        font-size: 1.3rem;
+    }
+    .hero-section .water-element {
+        display: none; /* Hide smaller bubbles on small screens */
+    }
+    .scroll-down-indicator {
+        font-size: 1.5rem;
+        bottom: 20px;
+    }
+    .features-section, .about-preview-section, .products-preview-section, .testimonials-section, .cta-section {
+        padding: 70px 0;
+    }
+    .quick-facts-section { /* Adjust padding for quick facts on smaller screens */
+        padding-top: 70px; /* Adjusted to match other sections */
+        margin-top: 0; /* Remove negative margin */
+        clip-path: none; /* Remove clip-path for mobile for simplicity */
+    }
+    .feature-card, .product-card, .testimonial-item, .fact-item { /* Added fact-item */
+        margin-bottom: 30px; /* Add margin for mobile view */
+    }
+    .feature-icon {
+        font-size: 3.5rem;
+    }
+    .feature-card h3 {
+        font-size: 1.6rem;
+    }
+    .product-image {
+        height: 200px;
+    }
+    .product-info h3 {
+        font-size: 1.4rem;
+    }
+    .testimonial-item {
+        min-height: unset; /* Allow height to adjust */
+        margin: 0; /* Remove horizontal margin for full width */
+        padding: 30px;
+    }
+    .testimonial-content {
+        font-size: 1rem;
+    }
+    .testimonial-item img.avatar {
+        width: 60px;
+        height: 60px;
+    }
+    .cta-section h2 {
+        font-size: 2.5rem;
+    }
+    .cta-section p {
+        font-size: 1.1rem;
+    }
+    .cta-section .btn {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        bottom: 20px;
+        right: 20px;
+    }
+    .quick-facts-section .fact-item h3 {
+        font-size: 2.5rem;
+    }
+    .quick-facts-section .fact-item i {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    .hero-section .btn-primary {
+        padding: 10px 25px;
+        font-size: 1.1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+    .features-section, .about-preview-section, .products-preview-section, .testimonials-section, .cta-section, .quick-facts-section { /* Include quick-facts */
+        padding: 50px 0;
+    }
+    .feature-card, .product-card, .testimonial-item, .fact-item { /* Include fact-item */
+        padding: 25px;
+    }
+    .feature-icon {
+        font-size: 3rem;
+    }
+    .feature-card h3 {
+        font-size: 1.4rem;
+    }
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+    .cta-section p {
+        font-size: 1rem;
+    }
+    .d-flex.justify-content-center.gap-3 {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px !important;
+    }
+    .quick-facts-section .fact-item h3 {
+        font-size: 2rem;
+    }
+    .quick-facts-section .fact-item i {
+        font-size: 1.8rem;
+    }
+}
+/* Process Section */
+.process-header {
+    padding: 100px 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-bottom: 40px;
+}

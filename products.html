@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the range of purified drinking water products and services from Birika Springs: bottled water, customized bottling for events, and convenient water delivery services.">
+    <meta name="keywords" content="bottled water, customized water bottles, water delivery service, purified water products, bulk water, event water, Birika Springs products">
+    <meta name="author" content="Birika Springs">
+    <title>Birika Springs | Products & Services</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Global Styles -->
+    <link rel="stylesheet" href="css/products.css"> <!-- Products Page Specific Styles -->
+    <!-- Favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/007bff/ffffff?text=BS" type="image/x-icon"> <!-- Placeholder Favicon -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://placehold.co/150x50/007bff/ffffff?text=BIRIKA+SPRINGS+LOGO" alt="Birika Springs Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="process.html">Our Process</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="locations.html">Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <!-- Shopping Cart Icon with Count -->
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link cart-icon-link" href="#" data-bs-toggle="modal" data-bs-target="#shoppingCartModal" aria-label="Shopping Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge bg-primary rounded-pill cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header/Hero for Products -->
+    <header class="page-header products-header text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-3 fw-bold animate-on-scroll">Our Products & Services</h1>
+            <p class="lead animate-on-scroll">Tailored hydration solutions for every need.</p>
+        </div>
+    </header>
+
+    <!-- Bottled Water Section -->
+    <section id="bottled-water" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="section-title"><i class="fas fa-bottle-water me-3"></i>Bottled Water</h2>
+                <p class="section-subtitle">Pure, natural water in convenient sizes</p>
+            </div>
+            <div class="row justify-content-end mb-4 animate-on-scroll">
+                <div class="col-md-4 col-lg-3">
+                    <select class="form-select rounded-pill shadow-sm" id="productFilter" aria-label="Filter products by size">
+                        <option value="all" selected>Filter by Size (All)</option>
+                        <option value="500ml">500ml</option>
+                        <option value="1l">1 Liter</option>
+                        <option value="5l">5 Liter</option>
+                        <option value="10l">10 Liter</option>
+                        <option value="20l">20 Liter</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center" id="productCardsContainer">
+                <div class="col-md-6 col-lg-4 animate-on-scroll" data-size="500ml">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="https://placehold.co/600x400/A0D9F7/007bff?text=500ml+Bottle" alt="500ml bottled water" class="img-fluid">
+                            <div class="product-badge">Bestseller</div>
+                        </div>
+                        <div class="product-details p-4">
+                            <h3>500ml Bottle</h3>
+                            <p class="text-muted">Perfect for individuals on the go</p>
+                            <div class="product-features mb-3">
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Compact & portable</p>
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Case of 24 bottles</p>
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Ideal for offices</p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center mt-auto">
+                                <h4 class="mb-2 text-primary">KSh 30</h4>
+                                <div class="quantity-control mb-3">
+                                    <button class="btn btn-outline-primary btn-sm decrease-quantity">-</button>
+                                    <input type="number" class="form-control form-control-sm quantity-input" value="1" min="1" data-product-id="500ml">
+                                    <button class="btn btn-outline-primary btn-sm increase-quantity">+</button>
+                                </div>
+                                <button type="button" class="btn btn-primary add-to-cart-btn w-100"
+                                    data-product-id="500ml"
+                                    data-product-name="500ml Bottle"
+                                    data-product-price="30"
+                                    data-product-image="https://placehold.co/600x400/A0D9F7/007bff?text=500ml+Bottle">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 animate-on-scroll" data-size="1l">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="https://placehold.co/600x400/add8e6/333333?text=1L+Bottle" alt="1L bottled water" class="img-fluid">
+                        </div>
+                        <div class="product-details p-4">
+                            <h3>1 Liter Bottle</h3>
+                            <p class="text-muted">Great for daily hydration</p>
+                            <div class="product-features mb-3">
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Perfect for workouts</p>
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Case of 12 bottles</p>
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Family-sized</p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center mt-auto">
+                                <h4 class="mb-2 text-primary">KSh 50</h4>
+                                <div class="quantity-control mb-3">
+                                    <button class="btn btn-outline-primary btn-sm decrease-quantity">-</button>
+                                    <input type="number" class="form-control form-control-sm quantity-input" value="1" min="1" data-product-id="1l">
+                                    <button class="btn btn-outline-primary btn-sm increase-quantity">+</button>
+                                </div>
+                                <button type="button" class="btn btn-primary add-to-cart-btn w-100"
+                                    data-product-id="1l"
+                                    data-product-name="1 Liter Bottle"
+                                    data-product-price="50"
+                                    data-product-image="https://placehold.co/600x400/add8e6/333333?text=1L+Bottle">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 animate-on-scroll" data-size="5l">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="https://placehold.co/600x400/4a90e2/ffffff?text=5L+Bottle" alt="5L bottled water" class="img-fluid">
+                            <div class="product-badge new">New</div>
+                        </div>
+                        <div class="product-details p-4">
+                            <h3>5 Liter Bottle</h3>
+                            <p class="text-muted">For families and groups</p>
+                            <div class="product-features mb-3">
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Economical size</p>
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Case of 4 bottles</p>
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Great for home use</p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center mt-auto">
+                                <h4 class="mb-2 text-primary">KSh 200</h4>
+                                <div class="quantity-control mb-3">
+                                    <button class="btn btn-outline-primary btn-sm decrease-quantity">-</button>
+                                    <input type="number" class="form-control form-control-sm quantity-input" value="1" min="1" data-product-id="5l">
+                                    <button class="btn btn-outline-primary btn-sm increase-quantity">+</button>
+                                </div>
+                                <button type="button" class="btn btn-primary add-to-cart-btn w-100"
+                                    data-product-id="5l"
+                                    data-product-name="5 Liter Bottle"
+                                    data-product-price="200"
+                                    data-product-image="https://placehold.co/600x400/4a90e2/ffffff?text=5L+Bottle">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- New 10 Liter Bottle -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll" data-size="10l">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="https://placehold.co/600x400/007bff/ffffff?text=10L+Bottle" alt="10L bottled water" class="img-fluid">
+                        </div>
+                        <div class="product-details p-4">
+                            <h3>10 Liter Bottle</h3>
+                            <p class="text-muted">Ideal for small offices or extended home use</p>
+                            <div class="product-features mb-3">
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Convenient bulk size</p>
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Easy to handle</p>
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Suitable for water dispensers</p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center mt-auto">
+                                <h4 class="mb-2 text-primary">KSh 350</h4>
+                                <div class="quantity-control mb-3">
+                                    <button class="btn btn-outline-primary btn-sm decrease-quantity">-</button>
+                                    <input type="number" class="form-control form-control-sm quantity-input" value="1" min="1" data-product-id="10l">
+                                    <button class="btn btn-outline-primary btn-sm increase-quantity">+</button>
+                                </div>
+                                <button type="button" class="btn btn-primary add-to-cart-btn w-100"
+                                    data-product-id="10l"
+                                    data-product-name="10 Liter Bottle"
+                                    data-product-price="350"
+                                    data-product-image="https://placehold.co/600x400/007bff/ffffff?text=10L+Bottle">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- New 20 Liter Bottle -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll" data-size="20l">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="https://placehold.co/600x400/4a90e2/ffffff?text=20L+Bottle" alt="20L bottled water" class="img-fluid">
+                        </div>
+                        <div class="product-details p-4">
+                            <h3>20 Liter Bottle</h3>
+                            <p class="text-muted">Economical choice for large families and businesses</p>
+                            <div class="product-features mb-3">
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Maximize value</p>
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Perfect for water coolers</p>
+                                <p><i class="fas fa-check-circle text-primary me-2"></i> Reduces plastic waste</p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center mt-auto">
+                                <h4 class="mb-2 text-primary">KSh 600</h4>
+                                <div class="quantity-control mb-3">
+                                    <button class="btn btn-outline-primary btn-sm decrease-quantity">-</button>
+                                    <input type="number" class="form-control form-control-sm quantity-input" value="1" min="1" data-product-id="20l">
+                                    <button class="btn btn-outline-primary btn-sm increase-quantity">+</button>
+                                </div>
+                                <button type="button" class="btn btn-primary add-to-cart-btn w-100"
+                                    data-product-id="20l"
+                                    data-product-name="20 Liter Bottle"
+                                    data-product-price="600"
+                                    data-product-image="https://placehold.co/600x400/4a90e2/ffffff?text=20L+Bottle">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cartMessage" class="mt-4 text-center fw-bold"></div>
+        </div>
+    </section>
+
+    <!-- Customized Bottling Section -->
+    <section id="customized-bottling" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+                    <img src="https://placehold.co/800x500/add8e6/333333?text=CUSTOM+BOTTLES+EVENTS" alt="Customized Water Bottles for Events" class="img-fluid rounded shadow-lg border border-primary border-3">
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <h2 class="section-title mb-4"><i class="fas fa-pen-ruler me-3"></i>Customized Bottling (for events)</h2>
+                    <p class="lead">Add a personal and professional touch to your special occasions and corporate events with Birika Springs customized bottled water.</p>
+                    <p>We offer personalized branding options, allowing you to feature your event logo, company name, or a special message directly on our premium water bottles. Ideal for weddings, conferences, product launches, and promotional activities.</p>
+                    <div class="custom-features mb-4">
+                        <div class="feature-item d-flex align-items-center mb-3">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-bullhorn text-primary"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Brand Promotion</h5>
+                                <p class="mb-0 text-muted">Great for corporate events, product launches, and marketing campaigns.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item d-flex align-items-center mb-3">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-heart text-primary"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Special Occasions</h5>
+                                <p class="mb-0 text-muted">Perfect for weddings, birthdays, and anniversary celebrations.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item d-flex align-items-center">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-medal text-primary"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Premium Quality</h5>
+                                <p class="mb-0 text-muted">Same great Birika Springs water with your custom design.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-pricing mb-4">
+                        <h5 class="mb-3">Pricing Starts At:</h5>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="pricing-card p-3 text-center rounded shadow-sm border">
+                                    <h6>500ml Bottles</h6>
+                                    <p class="price text-primary fw-bold fs-4">KSh 50</p>
+                                    <p class="small text-muted mb-0">per bottle</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="pricing-card p-3 text-center rounded shadow-sm border">
+                                    <h6>1L Bottles</h6>
+                                    <p class="price text-primary fw-bold fs-4">KSh 70</p>
+                                    <p class="small text-muted mb-0">per bottle</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="small text-muted mt-3">* Minimum order of 50 bottles required for custom printing</p>
+                    </div>
+                    <!-- Button to open Request Quote Modal -->
+                    <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#requestQuoteModal" data-inquiry-type="Customized Bottling">Request a Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Water Delivery Services Section -->
+    <section id="delivery-services" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse"> <!-- Alternating layout with image on right -->
+                <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+                    <img src="https://placehold.co/800x500/4a90e2/ffffff?text=WATER+DELIVERY+TRUCK" alt="Water Delivery Services" class="img-fluid rounded shadow-lg border border-primary border-3">
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <h2 class="section-title mb-4"><i class="fas fa-truck-fast me-3"></i>Water Delivery Service</h2>
+                    <p class="lead">Enjoy the convenience of having pure, refreshing Birika Springs water delivered directly to your home or office.</p>
+                    <p>Our reliable door-to-door delivery service covers various areas, ensuring you always have access to premium quality drinking water without the hassle. Flexible delivery schedules are available to meet your needs.</p>
+                    <div class="delivery-details mb-4">
+                        <h5 class="mb-3">Service Areas:</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Kajiado</li>
+                                    <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Kitengela</li>
+                                    <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Ngong</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Isinya</li>
+                                    <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Matasia</li>
+                                    <li><i class="fas fa-map-marker-alt text-primary me-2"></i> Surrounding areas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="delivery-pricing mb-4">
+                        <h5 class="mb-3">Delivery Fees:</h5>
+                        <div class="table-responsive">
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Order Value</th>
+                                        <th>Delivery Fee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Below KSh 1,000</td>
+                                        <td>KSh 200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KSh 1,000 - 2,500</td>
+                                        <td>KSh 150</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Above KSh 2,500</td>
+                                        <td>FREE</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="small text-muted mt-2">* Delivery fees may vary for areas outside our primary service zone</p>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary mt-3">Schedule Delivery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bulk Orders Section -->
+    <section id="bulk-orders" class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center animate-on-scroll">
+                    <h2 class="section-title mb-4"><i class="fas fa-boxes-stacked me-3"></i>Bulk Orders & Wholesale</h2>
+                    <p class="lead mb-5">Are you a retailer, restaurant, or organization needing large quantities of Birika Springs water? We offer special pricing for bulk orders and wholesale partnerships.</p>
+                    <div class="bulk-benefits mb-5">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="benefit-card p-4 rounded shadow-sm border">
+                                    <div class="benefit-icon mb-3">
+                                        <i class="fas fa-percentage text-primary"></i>
+                                    </div>
+                                    <h6>Discount Pricing</h6>
+                                    <p class="small mb-0 text-muted">Special rates for large volume orders</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="benefit-card p-4 rounded shadow-sm border">
+                                    <div class="benefit-icon mb-3">
+                                        <i class="fas fa-truck-ramp-box text-primary"></i> <!-- Changed icon -->
+                                    </div>
+                                    <h6>Priority Delivery</h6>
+                                    <p class="small mb-0 text-muted">Dedicated delivery scheduling</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="benefit-card p-4 rounded shadow-sm border">
+                                    <div class="benefit-icon mb-3">
+                                        <i class="fas fa-handshake text-primary"></i> <!-- Changed icon -->
+                                    </div>
+                                    <h6>Dedicated Account Manager</h6>
+                                    <p class="small mb-0 text-muted">Personalized service for your business</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button to open Request Quote Modal -->
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#requestQuoteModal" data-inquiry-type="Bulk Order / Wholesale">Inquire About Wholesale</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section: Product Information / FAQs -->
+    <section id="product-info-faq" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="section-title"><i class="fas fa-info-circle me-3"></i>Product Information & FAQs</h2>
+                <p class="section-subtitle">Answers to common questions about our water.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 animate-on-scroll">
+                    <div class="accordion" id="productFaqAccordion">
+                        <div class="accordion-item rounded-3 shadow-sm mb-3">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What is the mineral content of Birika Springs water?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#productFaqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Birika Springs purified drinking water undergoes Reverse Osmosis, which removes most minerals along with contaminants. This results in water that is exceptionally pure. For specific detailed mineral analysis, please contact us directly.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-3 shadow-sm mb-3">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How long does the purified water last?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#productFaqAccordion">
+                                <div class="accordion-body text-muted">
+                                    When stored in a cool, dark place away from direct sunlight and contaminants, our sealed bottled water typically has a shelf life of up to 2 years. Once opened, it's best consumed within a few days for optimal freshness.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-3 shadow-sm mb-3">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Are your bottles recyclable?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#productFaqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Yes, all our plastic bottles are made from recyclable PET material. We encourage our customers to recycle empty bottles responsibly to support environmental sustainability.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Call to Action Section (Reused from Home) -->
+    <section id="cta" class="cta-section py-5 text-white text-center">
+        <div class="cta-overlay"></div>
+        <div class="container position-relative animate-on-scroll">
+            <h2 class="mb-4">Ready to Experience Premium Water?</h2>
+            <p class="lead mb-5">Order now and enjoy the refreshing taste of pure, natural water delivered to your doorstep.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="contact.html" class="btn btn-light btn-lg">Contact Us</a>
+                <a href="tel:+254711503952" class="btn btn-outline-light btn-lg"><i class="fas fa-phone me-2"></i> Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="https://placehold.co/180x60/007bff/ffffff?text=BIRIKA+SPRINGS+LOGO" alt="Birika Springs Logo" class="mb-3">
+                    <p>Birika Springs is dedicated to providing high-quality, purified drinking water to our customers across Kajiado County and beyond.</p>
+                    <div class="social-icons mt-4">
+                        <a href="https://www.facebook.com/groups/3796740780648116" target="_blank" aria-label="Facebook Group"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/BirikaSprings" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/BirikaSprings" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/254711503952" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-white">Products</a></li>
+                        <li class="mb-2"><a href="process.html" class="text-white">Our Process</a></li>
+                        <li class="mb-2"><a href="locations.html" class="text-white">Locations</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Bottled Water Sales</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Customized Bottling</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Water Delivery Services</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt text-white me-2"></i> Kajiado, Kenya</li>
+                        <li class="mb-2"><i class="fas fa-phone text-white me-2"></i> +254 711 503 952</li>
+                        <li class="mb-2"><i class="fas fa-phone text-white me-2"></i> +254 791 516 925</li>
+                        <li class="mb-2"><i class="fas fa-phone text-white me-2"></i> 0798 636 560</li>
+                        <li><i class="fas fa-envelope text-white me-2"></i> birikasprings@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Birika Springs. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> for pure hydration</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Request Quote Modal -->
+    <div class="modal fade" id="requestQuoteModal" tabindex="-1" aria-labelledby="requestQuoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-lg shadow-lg">
+                <div class="modal-header bg-primary text-white rounded-top-lg">
+                    <h5 class="modal-title" id="requestQuoteModalLabel">Request a Quote</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted">Please fill out the form below, and we'll get back to you shortly regarding your inquiry for <strong id="inquiryType"></strong>.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="quoteName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control rounded-md" id="quoteName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quoteEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control rounded-md" id="quoteEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quotePhone" class="form-label">Phone Number (Optional)</label>
+                            <input type="tel" class="form-control rounded-md" id="quotePhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="quoteMessage" class="form-label">Your Message / Requirements</label>
+                            <textarea class="form-control rounded-md" id="quoteMessage" rows="4" required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary rounded-pill py-2">Submit Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div class="modal fade" id="shoppingCartModal" tabindex="-1" aria-labelledby="shoppingCartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-lg shadow-lg">
+                <div class="modal-header bg-primary text-white rounded-top-lg">
+                    <h5 class="modal-title" id="shoppingCartModalLabel">Your Shopping Cart</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="cartItemsContainer">
+                        <!-- Cart items will be dynamically loaded here by JavaScript -->
+                        <p class="text-center text-muted" id="emptyCartMessage">Your cart is empty.</p>
+                    </div>
+                    <div id="cartSummary" class="mt-4 pt-3 border-top d-none">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0 text-primary">Total:</h5>
+                            <h5 class="mb-0 text-primary" id="cartTotal">KSh 0</h5>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <!-- Modified to use an ID for JS handling -->
+                            <button type="button" class="btn btn-primary rounded-pill py-2" id="proceedToCheckoutBtn">Proceed to Checkout</button>
+                            <button type="button" class="btn btn-outline-danger rounded-pill py-2" id="clearCartBtn">Clear Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+/* css/locations.css */
+
+/* Page Header/Hero for Locations */
+.locations-header {
+    background: linear-gradient(rgba(0, 123, 255, 0.88), rgba(74, 144, 226, 0.88)), url('https://images.unsplash.com/photo-1598439366601-e2b2c2b2b2b2?auto=format&fit=cover') no-repeat center center; /* Placeholder map/location background */
+    background-size: cover;
+    background-attachment: fixed; /* Parallax-like effect */
+    padding: 140px 0;
+    color: #ffffff;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    margin-bottom: 80px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.locations-header h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ffffff;
+    opacity: 0; /* Initial state for animation */
+    transform: translateY(-50px); /* Initial state for animation */
+    animation: fadeInDown 1s ease-out forwards; /* Apply animation */
+}
+
+.locations-header p {
+    font-size: 2.2rem;
+    color: #f0f8ff;
+    opacity: 0; /* Initial state for animation */
+    transform: translateY(50px); /* Initial state for animation */
+    animation: fadeInUp 1s ease-out 0.4s forwards; /* Apply animation with delay */
+}
+
+/* Delivery Areas Section */
+#delivery-areas {
+    padding: 100px 0;
+    background-color: #f8f9fa; /* Light background */
+}
+
+#delivery-areas .card {
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 123, 255, 0.15);
+}
+
+#delivery-areas .delivery-list li {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+#delivery-areas .delivery-list li i {
+    font-size: 1.4rem;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+#delivery-areas .delivery-schedule h5 {
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#delivery-areas .delivery-schedule ul li {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+#delivery-areas .delivery-schedule ul li i {
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-right: 8px;
+}
+
+
+/* Check Delivery Section */
+#check-delivery {
+    padding: 100px 0;
+    background-color: #ffffff; /* White background */
+}
+
+#check-delivery .form-control-lg {
+    padding: 0.75rem 1.25rem; /* Larger padding for input */
+}
+
+#check-delivery .btn-primary {
+    padding: 0.75rem 1.5rem; /* Match input height */
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#check-delivery .rounded-pill-start {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+#check-delivery .rounded-pill-end {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+#deliveryMessage {
+    min-height: 30px; /* Reserve space for message */
+    font-size: 1.1rem;
+}
+
+.delivery-success {
+    color: #28a745; /* Green for success */
+}
+
+.delivery-fail {
+    color: #dc3545; /* Red for failure */
+}
+
+
+/* Physical Locations Section */
+#physical-locations {
+    padding: 100px 0;
+    background-color: #f8f9fa; /* Light background */
+}
+
+#physical-locations .form-select {
+    border-radius: 50px; /* Rounded filter dropdown */
+    padding: 0.75rem 1.25rem;
+    font-size: 1.1rem;
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+.location-card {
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease; /* Added opacity for filtering */
+    height: 100%; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 123, 255, 0.15);
+}
+
+.location-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.location-card h4 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.location-card h4 i {
+    font-size: 1.8rem;
+    margin-right: 10px;
+    color: #4a90e2; /* Secondary blue for icon */
+}
+
+.location-card p.text-muted {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 10px; /* Adjusted margin */
+}
+
+.location-card ul {
+    padding-left: 0;
+    list-style: none;
+    margin-top: 15px; /* Space above details list */
+    margin-bottom: 15px; /* Space below details list */
+}
+
+.location-card ul li {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.location-card ul li i {
+    font-size: 1.1rem;
+    color: #007bff;
+    margin-right: 8px;
+}
+
+.location-card ul li a {
+    color: #007bff;
+    font-weight: 600;
+}
+
+
+/* Styling for hidden location cards */
+.location-card.hidden {
+    display: none;
+    opacity: 0;
+}
+
+
+/* Map Section */
+#map-section {
+    padding: 100px 0;
+    background-color: #ffffff; /* White background */
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 450px; /* Fixed height for the map */
+    border-radius: 20px;
+    overflow: hidden; /* Ensure iframe respects border-radius */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 4px solid #007bff;
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove iframe default border */
+}
+
+
+/* Keyframe Animations (Ensure these are defined in a global CSS or copied here for consistency) */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Responsive Adjustments for Locations Page */
+@media (max-width: 991.98px) {
+    .locations-header h1 {
+        font-size: 3.5rem;
+    }
+    .locations-header p {
+        font-size: 1.4rem;
+    }
+    #delivery-areas, #check-delivery, #physical-locations, #map-section { /* Added check-delivery */
+        padding: 80px 0;
+    }
+    .location-card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .locations-header {
+        padding: 100px 0;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        margin-bottom: 40px;
+    }
+    .locations-header h1 {
+        font-size: 2.8rem;
+    }
+    .locations-header p {
+        font-size: 1.2rem;
+    }
+    #delivery-areas, #check-delivery, #physical-locations, #map-section { /* Added check-delivery */
+        padding: 60px 0;
+    }
+    #check-delivery .input-group {
+        flex-direction: column; /* Stack input and button vertically */
+    }
+    #check-delivery .form-control-lg,
+    #check-delivery .btn-primary {
+        width: 100%;
+        border-radius: 0.5rem !important; /* Full rounded corners for stacked elements */
+    }
+    #check-delivery .form-control-lg {
+        margin-bottom: 15px; /* Space between input and button */
+    }
+    .location-card h4 {
+        font-size: 1.4rem;
+    }
+    .location-card h4 i {
+        font-size: 1.6rem;
+    }
+    .map-placeholder {
+        height: 350px; /* Adjust map height for smaller screens */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .locations-header {
+        padding: 80px 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        margin-bottom: 30px;
+    }
+    .locations-header h1 {
+        font-size: 2.2rem;
+    }
+    .locations-header p {
+        font-size: 1rem;
+    }
+    #delivery-areas, #check-delivery, #physical-locations, #map-section { /* Added check-delivery */
+        padding: 50px 0;
+    }
+    .location-card {
+        padding: 25px;
+    }
+    .location-card h4 {
+        font-size: 1.2rem;
+    }
+    .location-card h4 i {
+        font-size: 1.4rem;
+    }
+    .map-placeholder {
+        height: 280px; /* Further adjust map height */
+    }
+}
+/* Back to Top Button */
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other content */
+}

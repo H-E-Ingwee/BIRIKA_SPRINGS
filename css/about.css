@@ -1,0 +1,476 @@
+/* css/about.css */
+
+/* Page Header/Hero for About Us */
+.page-header {
+    background: linear-gradient(rgba(0, 123, 255, 0.88), rgba(74, 144, 226, 0.88)), url('https://images.unsplash.com/photo-1544465522-f3f2628468b3?auto=format&fit=cover') no-repeat center center;
+    background-size: cover; /* Ensure image covers the area */
+    background-attachment: fixed; /* Parallax-like effect for background */
+    padding: 140px 0; /* Increased padding for more prominence */
+    color: #ffffff;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.5); /* Stronger text shadow */
+    border-bottom-left-radius: 80px; /* More pronounced rounded corners */
+    border-bottom-right-radius: 80px; /* More pronounced rounded corners */
+    margin-bottom: 80px; /* Increased margin below header */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Stronger shadow for the header */
+    overflow: hidden; /* Ensure content is within bounds with radius */
+}
+
+.page-header h1 {
+    font-size: 5rem; /* Larger heading for impact */
+    font-weight: 900;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.page-header p {
+    font-size: 2.2rem; /* Larger lead paragraph */
+    color: #f0f8ff;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+}
+
+/* Company Overview Section */
+#company-overview {
+    padding: 100px 0; /* More padding */
+    background-color: #f8f9fa; /* Light background */
+    position: relative; /* For background pattern */
+    /* Subtle background pattern for company overview */
+    background-image: linear-gradient(45deg, rgba(0, 123, 255, 0.03) 25%, transparent 25%, transparent 75%, rgba(0, 123, 255, 0.03) 75%, rgba(0, 123, 255, 0.03)), linear-gradient(45deg, rgba(0, 123, 255, 0.03) 25%, transparent 25%, transparent 75%, rgba(0, 123, 255, 0.03) 75%, rgba(0, 123, 255, 0.03));
+    background-size: 40px 40px; /* Size of the pattern */
+    background-position: 0 0, 20px 20px; /* Offset for checkerboard effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for section separation */
+}
+
+/* Company Overview Carousel Styling */
+#companyOverviewCarousel .carousel-inner {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 4px solid #007bff;
+    overflow: hidden; /* Ensure images are clipped by radius */
+}
+
+#companyOverviewCarousel .carousel-item img {
+    transition: transform 0.6s ease; /* Smooth zoom on slide change */
+}
+
+#companyOverviewCarousel .carousel-item:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+#companyOverviewCarousel .carousel-control-prev-icon,
+#companyOverviewCarousel .carousel-control-next-icon {
+    background-image: none; /* Remove default Bootstrap icons */
+    width: 30px;
+    height: 30px;
+    font-size: 2rem; /* Use Font Awesome for controls */
+    color: #007bff;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#companyOverviewCarousel .carousel-control-prev-icon::before {
+    content: "\f104"; /* Font Awesome left arrow */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+#companyOverviewCarousel .carousel-control-next-icon::before {
+    content: "\f105"; /* Font Awesome right arrow */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+#companyOverviewCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#companyOverviewCarousel .carousel-control-next:hover .carousel-control-next-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#companyOverviewCarousel .carousel-indicators [data-bs-target] {
+    background-color: #007bff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+#companyOverviewCarousel .carousel-indicators .active {
+    opacity: 1;
+}
+
+
+#company-overview .section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#company-overview .section-title i {
+    font-size: 2.8rem; /* Larger icon */
+    color: #007bff;
+}
+
+#company-overview p.lead {
+    font-size: 1.35rem; /* Larger lead paragraph */
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 25px; /* More space below lead */
+}
+
+#company-overview ul li {
+    font-size: 1.15rem; /* Slightly larger list items */
+    color: #555;
+    margin-bottom: 12px; /* More space between list items */
+}
+
+#company-overview ul li i {
+    color: #007bff;
+    font-size: 1.4rem; /* Larger checkmark icon */
+}
+
+/* Mission & Vision Section */
+#mission-vision {
+    padding: 100px 0;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for section separation */
+}
+
+#mission-vision .card {
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 123, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mission-vision .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+#mission-vision .section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#mission-vision .section-title i {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+#mission-vision p.lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+#mission-vision p.text-muted {
+    font-size: 1rem;
+    color: #777;
+}
+
+
+/* Purification Process Section (Concise Cards) */
+#purification-process {
+    padding: 100px 0; /* More padding */
+    background-color: #f8f9fa; /* Light background for alternating sections */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for section separation */
+}
+
+#purification-process .section-title i {
+    font-size: 2.8rem;
+    color: #007bff;
+}
+
+.process-step-card {
+    background-color: #ffffff; /* White background for concise steps */
+    border-radius: 20px;
+    padding: 30px; /* Adjusted padding */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 123, 255, 0.15);
+}
+
+.process-step-card:hover {
+    transform: translateY(-10px); /* Subtle lift on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.process-step-card .process-icon { /* Re-purposed for concise cards */
+    flex-shrink: 0;
+    margin-bottom: 25px; /* Space below icon */
+    background-color: #007bff;
+    color: #ffffff;
+    width: 80px; /* Larger icon container for prominence */
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.process-step-card:hover .process-icon {
+    background-color: #0056b3;
+}
+
+.process-step-card .process-icon i {
+    font-size: 3.5rem; /* Larger icon size */
+}
+
+.process-step-card h4 {
+    font-size: 1.8rem; /* Larger heading */
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.process-step-card p.text-muted { /* For the brief description */
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px; /* Space before button */
+}
+
+
+/* Staggered animation for process steps (JS triggers 'is-visible') */
+.process-step-card.stagger-animate {
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly below its final position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+.process-step-card.stagger-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Environmental Commitment Section */
+#environmental-commitment {
+    padding: 100px 0;
+    background-color: #ffffff;
+    position: relative;
+    background-image: linear-gradient(45deg, rgba(40, 167, 69, 0.03) 25%, transparent 25%, transparent 75%, rgba(40, 167, 69, 0.03) 75%, rgba(40, 167, 69, 0.03)), linear-gradient(45deg, rgba(40, 167, 69, 0.03) 25%, transparent 25%, transparent 75%, rgba(40, 167, 69, 0.03) 75%, rgba(40, 167, 69, 0.03));
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for section separation */
+}
+
+#environmental-commitment img {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 4px solid #28a745; /* Green border for environmental theme */
+}
+
+#environmental-commitment img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+#environmental-commitment .section-title i {
+    font-size: 2.8rem;
+    color: #28a745; /* Green icon for environmental theme */
+}
+
+#environmental-commitment p.lead {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+#environmental-commitment ul li {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+#environmental-commitment ul li i {
+    color: #28a745; /* Green checkmark icon */
+    font-size: 1.4rem;
+}
+
+
+/* Quality Assurance Highlight Section (Reused from About Us) */
+#quality-highlight {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for section separation */
+}
+
+#quality-highlight .section-title i {
+    font-size: 2.8rem;
+    color: #007bff;
+}
+
+#quality-highlight ul li {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+#quality-highlight ul li i {
+    color: #007bff;
+    font-size: 1.4rem;
+}
+
+#quality-highlight img {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 4px solid #007bff;
+}
+
+#quality-highlight img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframe Animations (copied from global/home for convenience, ensure consistency) */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments for About Us Page */
+@media (max-width: 991.98px) {
+    .page-header h1 {
+        font-size: 3.5rem;
+    }
+    .page-header p {
+        font-size: 1.4rem;
+    }
+    #company-overview, #mission-vision, #purification-process, #environmental-commitment, #quality-highlight { /* Added new sections */
+        padding: 80px 0;
+    }
+    #company-overview .carousel-inner, #environmental-commitment img, #quality-highlight img {
+        margin-bottom: 30px; /* Add margin for mobile */
+    }
+    #mission-vision .card {
+        margin-bottom: 30px; /* Add margin for mobile */
+    }
+    .process-step-card { /* For concise cards */
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+    .process-step-card .process-icon {
+        width: 70px;
+        height: 70px;
+    }
+    .process-step-card .process-icon i {
+        font-size: 3rem;
+    }
+    .process-step-card h4 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .page-header {
+        padding: 100px 0;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        margin-bottom: 40px;
+    }
+    .page-header h1 {
+        font-size: 2.8rem;
+    }
+    .page-header p {
+        font-size: 1.2rem;
+    }
+    #company-overview, #mission-vision, #purification-process, #environmental-commitment, #quality-highlight { /* Added new sections */
+        padding: 60px 0;
+    }
+    #company-overview .section-title i,
+    #mission-vision .section-title i,
+    #purification-process .section-title i,
+    #environmental-commitment .section-title i,
+    #quality-highlight .section-title i {
+        font-size: 2.2rem;
+    }
+    .process-step-card { /* For concise cards */
+        padding: 20px;
+    }
+    .process-step-card .process-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .process-step-card .process-icon i {
+        font-size: 2.5rem;
+    }
+    .process-step-card h4 {
+        font-size: 1.4rem;
+    }
+    #quality-highlight img {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .page-header {
+        padding: 80px 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        margin-bottom: 30px;
+    }
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+    .page-header p {
+        font-size: 1rem;
+    }
+    #company-overview, #mission-vision, #purification-process, #environmental-commitment, #quality-highlight { /* Added new sections */
+        padding: 50px 0;
+    }
+    #mission-vision .card {
+        padding: 25px;
+    }
+    .process-step-card { /* For concise cards */
+        padding: 20px;
+    }
+    .process-step-card .process-icon {
+        width: 50px;
+        height: 50px;
+    }
+    .process-step-card .process-icon i {
+        font-size: 2rem;
+    }
+    .process-step-card h4 {
+        font-size: 1.2rem;
+    }
+}
+/* Back to Top Button */
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other content */
+}
